@@ -1,0 +1,17 @@
+- project_folder/
+  - data/
+    - raw_audio/              # Thư mục chứa các tệp âm thanh gốc
+      - speaker1/
+      - speaker2/
+      - ...
+    - processed_audio/        # Thư mục chứa các tệp âm thanh sau khi tiền xử lý (nếu có)
+    - metadata/               # Thư mục chứa thông tin liên quan đến dữ liệu (ví dụ: nhãn, tập tin metadata)
+  - models/                   # Thư mục chứa mô hình huấn luyện và mô hình được lưu trữ
+  - notebooks/                # Thư mục chứa các notebook Jupyter hoặc các script Python cho việc phân tích dữ liệu và huấn luyện mô hình
+  - src/                      # Thư mục chứa mã nguồn cho các module, chức năng, và tiện ích
+    - data_processing/        # Thư mục chứa các script cho việc tiền xử lý dữ liệu âm thanh
+    - feature_extraction/     # Thư mục chứa các script cho việc trích xuất đặc trưng (ví dụ: MFCCs)
+    - models/                 # Thư mục chứa các script cho việc xây dựng, huấn luyện và đánh giá mô hình
+    - utils/                  # Thư mục chứa các chức năng tiện ích và hàm trợ giúp
+  - config/                   # Thư mục chứa các tập tin cấu hình
+  - tests/                    # Thư mục chứa các tập tin kiểm thử
