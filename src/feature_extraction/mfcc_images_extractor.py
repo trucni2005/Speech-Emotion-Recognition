@@ -10,9 +10,10 @@ from loguru import logger
 logger.add("mel_spectrogram_extraction.log", rotation="10 MB", retention="10 days", level="INFO")
 
 class MelSpectrogramImageExtractor:
-    def __init__(self, n_mels=512, figsize=(10, 4)):
+    def __init__(self, n_mels=512, figsize=(10, 4), fmax = 8000):
         self.n_mels = n_mels
         self.figsize = figsize
+        self.fmax = fmax
 
     def extract_and_save(self, audio_path, output_path):
         """
@@ -24,10 +25,12 @@ class MelSpectrogramImageExtractor:
         """
         try:
             y, sr = librosa.load(audio_path)
-            S = librosa.feature.melspectrogram(y=y, sr=sr, n_mels=self.n_mels)
+            S = librosa.feature.melspectrogram(y=y, sr=sr, n_mels=self.n_mels, fmax=self.fmax)
             S_dB = librosa.power_to_db(S, ref=np.max)
+            
             plt.figure(figsize=self.figsize)
-            librosa.display.specshow(S_dB, sr=sr)
+            librosa.display.specshow(S_dB, sr=sr, x_axis='time', y_axis='mel', fmax=self.fmax)
+            plt.colorbar(format='%+2.0f dB')
             plt.axis('off')
             plt.tight_layout(pad=0)
             plt.savefig(output_path, bbox_inches='tight', pad_inches=0)
