@@ -45,8 +45,8 @@ class VietnameseDatasetConfig:
 
     dataset_types = ["train", "test", "validation"]
     target_second_pad_or_trim = 2
-    n_mfcc_statistics = 40
-    n_mels = 256
+    n_mfcc_statistics = 26
+    n_mels = 512
     fig_size = (10, 4)
     normalize_sample_rate = 16000
 

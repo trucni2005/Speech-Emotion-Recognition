@@ -1,5 +1,5 @@
 import os
-from modules.feature_extraction.scripts.extract_statistic_features import StatisticFeatureExtraction
+from modules.extracting_feature.scripts.extract_statistic_features import StatisticFeatureExtraction
 
 class FeatureExtractionRunner:
     def __init__(self, config):

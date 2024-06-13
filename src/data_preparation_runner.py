@@ -1,5 +1,5 @@
-from modules.prepare_data.scripts.train_test_validation_split import TrainTestValidationSplit
-from modules.prepare_data.scripts.augment_audio_and_extract_file_path import AudioAugmentationAndFilePathExtraction
+from modules.preparing.scripts.train_test_validation_split import TrainTestValidationSplit
+from modules.preparing.scripts.augment_audio_and_extract_file_path import AudioAugmentationAndFilePathExtraction
 
 class DataPreparationRunner:
     def __init__(self, config):

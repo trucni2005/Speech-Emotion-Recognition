@@ -1,5 +1,5 @@
 import os
-from modules.feature_extraction.scripts.extract_mel_spectrogram import MelSpectrogramImageExtractor
+from modules.extracting_feature.scripts.extract_mel_spectrogram import MelSpectrogramImageExtractor
 
 class MelSpectrogramExtractionRunner:
     def __init__(self, config):
