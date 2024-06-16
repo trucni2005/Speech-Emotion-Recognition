@@ -37,15 +37,15 @@ class VietnameseDatasetConfig:
         }
     }
 
+    n_mfcc_statistics = 26
     statistic_feature_csv = {
-        "train": f"{feature_path}/statistic_features/train.csv",
-        "test": f"{feature_path}/statistic_features/test.csv",
-        "validation": f"{feature_path}/statistic_features/validation.csv",
+        "train": f"{feature_path}/statistic_features/{n_mfcc_statistics}/train.csv",
+        "test": f"{feature_path}/statistic_features/{n_mfcc_statistics}/test.csv",
+        "validation": f"{feature_path}/statistic_features/{n_mfcc_statistics}/validation.csv",
     }
 
     dataset_types = ["train", "test", "validation"]
     target_second_pad_or_trim = 2
-    n_mfcc_statistics = 26
     n_mels = 512
     fig_size = (10, 4)
     normalize_sample_rate = 16000

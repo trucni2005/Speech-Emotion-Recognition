@@ -12,6 +12,13 @@ class DataUtils:
         return pd.read_csv(file_path)
     
     @staticmethod
+    def get_n_mfcc_paths(n_mfcc, Config):
+        train_path = Config.n_mfcc_config[n_mfcc].train_path
+        validation_path = Config.n_mfcc_config[n_mfcc].validation_path
+        test_path = Config.n_mfcc_config[n_mfcc].test_path
+        return train_path, validation_path, test_path
+    
+    @staticmethod
     def scale_features(data):
         """
         Chuẩn hóa các đặc trưng.
@@ -108,3 +115,26 @@ class DataUtils:
         x_testcnn = np.expand_dims(X_test_scaled, axis=2)
         
         return x_traincnn, y_train, x_valcnn, y_val, x_testcnn, y_test, scaler
+
+    @staticmethod
+    def prepare_data_for_rf_model(train_file_path, test_file_path, val_file_path):
+        # Đọc dữ liệu từ các file vào DataFrame
+        train_data = pd.read_csv(train_file_path)
+        test_data = pd.read_csv(test_file_path)
+        val_data = pd.read_csv(val_file_path)
+        
+        # Gộp train và validation vào train
+        train_data = pd.concat([train_data, val_data], ignore_index=True)
+        
+        # Chia features và labels
+        X_train = train_data.drop(columns=['label', 'file_path'])
+        y_train = train_data['label']
+        X_test = test_data.drop(columns=['label', 'file_path'])
+        y_test = test_data['label']
+        
+        # Chuẩn hóa dữ liệu bằng StandardScaler
+        scaler = StandardScaler()
+        X_train = scaler.fit_transform(X_train)
+        X_test = scaler.transform(X_test)
+        
+        return X_train, X_test, y_train, y_test

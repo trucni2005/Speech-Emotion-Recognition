@@ -79,6 +79,7 @@ class ModelUtilities:
         plt.ylabel('True Labels')
         plt.show()
     
+    @staticmethod
     def plot_confusion_matrix_normalized(model, X_test, y_test, emotion_labels):
         """
         Vẽ ma trận nhầm lẫn chuẩn hóa cho bộ dữ liệu kiểm tra.
