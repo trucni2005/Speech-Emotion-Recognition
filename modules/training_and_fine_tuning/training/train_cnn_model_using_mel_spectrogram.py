@@ -32,20 +32,16 @@ class CnnModelUsingMelSpectrogram:
 
             Conv2D(64, (3, 3), activation='relu'),
             MaxPooling2D((2, 2)),
-            Dropout(0.2),
-
-            Conv2D(128, (3, 3), activation='relu'),
-            MaxPooling2D((2, 2)),
-            Dropout(0.4),
+            Dropout(0.3),
 
             Flatten(),
-            Dense(128, activation='relu'),
-            Dropout(0.5),
+            Dense(64, activation='relu'),
+            Dropout(0.3),
             Dense(self.num_classes, activation='softmax')
         ])
         return model
     
-    def compile_model(self, learning_rate=0.0008):
+    def compile_model(self, learning_rate=0.000008):
         ModelUtilities.compile_model(self.model, learning_rate)
     
     def train_model(self, X_train, y_train, X_val, y_val, model_name, patience_early_stop=5, patience_lr_reduction=3, factor=0.5, epochs=50, batch_size=64, learning_rate = 0.0008):

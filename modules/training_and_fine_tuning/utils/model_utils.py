@@ -49,18 +49,38 @@ class ModelUtilities:
         return test_loss, test_accuracy
 
     @staticmethod
-    def plot_training_history(history):
-        """
-        Vẽ lịch sử huấn luyện (accuracy và loss).
-        """
-        plt.figure(figsize=(8, 6))
-        plt.plot(history['accuracy'], label='Training Accuracy', color='blue')
-        plt.plot(history['val_accuracy'], label='Validation Accuracy', color='red')
+    def plot_training_history(history_dict):
+        # Lấy các giá trị loss từ lịch sử
+        loss_values = history_dict['loss']
+        val_loss_values = history_dict['val_loss']
+
+        # Lấy các giá trị accuracy từ lịch sử
+        acc_values = history_dict['accuracy']
+        val_acc_values = history_dict['val_accuracy']
+
+        # Số lượng epoch
+        epochs = range(1, len(loss_values) + 1)
+
+        # Vẽ đồ thị Loss
+        plt.figure(figsize=(12, 6))
+        plt.subplot(1, 2, 1)
+        plt.plot(epochs, loss_values, 'r-', label='Training loss')  # Đường màu đỏ cho training loss
+        plt.plot(epochs, val_loss_values, 'b-', label='Validation loss')  # Đường màu xanh cho validation loss
+        plt.title('Training and validation loss')
+        plt.xlabel('Epochs')
+        plt.ylabel('Loss')
+        plt.legend()
+
+        # Vẽ đồ thị Accuracy
+        plt.subplot(1, 2, 2)
+        plt.plot(epochs, acc_values, 'r-', label='Training acc')  # Đường màu đỏ cho training accuracy
+        plt.plot(epochs, val_acc_values, 'b-', label='Validation acc')  # Đường màu xanh cho validation accuracy
+        plt.title('Training and validation accuracy')
         plt.xlabel('Epochs')
         plt.ylabel('Accuracy')
-        plt.title('Training and Validation Accuracy')
         plt.legend()
-        plt.grid(True)
+
+        plt.tight_layout()
         plt.show()
 
     @staticmethod
@@ -96,10 +116,11 @@ class ModelUtilities:
         
         # Normalize the confusion matrix
         conf_matrix_normalized = conf_matrix.astype('float') / conf_matrix.sum(axis=1)[:, np.newaxis]
+        conf_matrix_normalized_percentage = conf_matrix_normalized * 100
 
         plt.figure(figsize=(10, 8))
-        sns.heatmap(conf_matrix_normalized, annot=True, fmt='.2f', cmap='Blues', 
-                    xticklabels=emotion_labels, yticklabels=emotion_labels)
+        sns.heatmap(conf_matrix_normalized_percentage, annot=True, fmt='.2f', cmap='Blues', 
+            xticklabels=emotion_labels, yticklabels=emotion_labels)
         plt.title('Normalized Confusion Matrix')
         plt.xlabel('Predicted Labels')
         plt.ylabel('True Labels')

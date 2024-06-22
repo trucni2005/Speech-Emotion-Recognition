@@ -34,7 +34,6 @@ class RmsExtractor:
         rms_min = np.min(rms)
         rms_median = np.median(rms)
         rms_25th_percentile = np.percentile(rms, 25)
-        rms_50th_percentile = np.percentile(rms, 50)
         rms_75th_percentile = np.percentile(rms, 75)
 
         return {
@@ -44,6 +43,5 @@ class RmsExtractor:
             'min': rms_min,
             'median': rms_median,
             '25th_percentile': rms_25th_percentile,
-            '50th_percentile': rms_50th_percentile,
             '75th_percentile': rms_75th_percentile
         }

@@ -40,7 +40,6 @@ class ZcrExtractor:
         zcr_min = np.min(zcr)
         zcr_median = np.median(zcr)
         zcr_25th_percentile = np.percentile(zcr, 25)
-        zcr_50th_percentile = np.percentile(zcr, 50)
         zcr_75th_percentile = np.percentile(zcr, 75)
         return {
             'mean': zcr_mean,
@@ -49,6 +48,5 @@ class ZcrExtractor:
             'min': zcr_min,
             'median': zcr_median,
             '25th_percentile': zcr_25th_percentile,
-            '50th_percentile': zcr_50th_percentile,
             '75th_percentile': zcr_75th_percentile
         }

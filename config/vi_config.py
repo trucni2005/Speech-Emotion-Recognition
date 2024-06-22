@@ -50,7 +50,7 @@ class VietnameseDatasetConfig:
     fig_size = (10, 4)
     normalize_sample_rate = 16000
 
-    split_ratio = (0.7, 0.15, 0.15)
+    split_ratio = (0.7, 0.2, 0.1)
 
     class ImageConfig:
         def __init__(self, train_test_split_path, n_mels):

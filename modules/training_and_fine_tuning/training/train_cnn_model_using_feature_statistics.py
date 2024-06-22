@@ -17,26 +17,29 @@ class CnnModelUsingFeatureStatistics:
     
     def build_model(self, input_shape):
         model = tf.keras.Sequential([
+
             L.Conv1D(128, kernel_size=3, strides=1, padding='same', activation='relu', input_shape=input_shape),
             L.BatchNormalization(),
             L.Conv1D(128, kernel_size=3, strides=1, padding='same', activation='relu'),
             L.BatchNormalization(),
             L.MaxPooling1D(pool_size=2, strides=2, padding='same'),
-            L.Dropout(0.2),
+            L.Dropout(0.6),
 
             L.Conv1D(64, kernel_size=3, strides=1, padding='same', activation='relu'),
             L.BatchNormalization(),
             L.Conv1D(64, kernel_size=3, strides=1, padding='same', activation='relu'),
             L.BatchNormalization(),
             L.MaxPooling1D(pool_size=2, strides=2, padding='same'),
-            L.Dropout(0.2),
+            L.Dropout(0.6),
 
             L.Flatten(),
             L.Dense(256, activation='relu'),
             L.BatchNormalization(),
-            L.Dropout(0.3),
+            L.Dropout(0.6),
             L.Dense(self.num_classes, activation='softmax')
         ])
+
+                
         model.summary(print_fn=logger.info)
         return model
     

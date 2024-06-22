@@ -41,7 +41,6 @@ class PitchExtractor:
         pitch_min = np.min(pitches)
         pitch_median = np.median(pitches)
         pitch_25th_percentile = np.percentile(pitches, 25)
-        pitch_50th_percentile = np.percentile(pitches, 50)
         pitch_75th_percentile = np.percentile(pitches, 75)
 
         return {
@@ -51,6 +50,5 @@ class PitchExtractor:
             'min': pitch_min,
             'median': pitch_median,
             '25th_percentile': pitch_25th_percentile,
-            '50th_percentile': pitch_50th_percentile, 
             '75th_percentile': pitch_75th_percentile
         }
