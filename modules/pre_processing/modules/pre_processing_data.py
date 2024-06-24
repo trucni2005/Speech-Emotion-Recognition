@@ -10,7 +10,7 @@ class PreProcessor:
     Lớp tiền xử lý âm thanh, bao gồm các phương pháp để cắt và lưu các đoạn âm thanh.
     """
     
-    def __init__(self, frame_size=256, hop_size=128, best_threshold=0.0003, target_fs=16000, target_dBFS=-15, min_silence_duration=0.1):
+    def __init__(self, frame_size=256, hop_size=128, best_threshold=0.0008, target_fs=16000, target_dBFS=-15, min_silence_duration=0.1):
         self.frame_size = frame_size
         self.hop_size = hop_size
         self.best_threshold = best_threshold

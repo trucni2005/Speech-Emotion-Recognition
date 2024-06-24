@@ -1,5 +1,5 @@
 class VietnameseDatasetConfig:
-    base_path = "D:/data_analysis/speech_emotion_recognition/data/VietnameseDataset"
+    base_path = "./data/VietnameseDataset"
     combined_data_path = f"{base_path}/raw/"
     train_test_split_path = f"{base_path}/train_test_splited_data"
     feature_path = f"{base_path}/features"
@@ -50,7 +50,7 @@ class VietnameseDatasetConfig:
     fig_size = (10, 4)
     normalize_sample_rate = 16000
 
-    split_ratio = (0.7, 0.2, 0.1)
+    split_ratio = (0.65, 0.25, 0.1)
 
     class ImageConfig:
         def __init__(self, train_test_split_path, n_mels):

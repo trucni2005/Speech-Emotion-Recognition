@@ -1,4 +1,4 @@
-<h1> Vietnamese Speech Emotion Recognition Model</h1>
+<h1>Vietnamese Speech Emotion Recognition Model</h1>
 <h2>Table of Contents</h2>
 <ul>
   <li><a href="#introduction">Introduction</a></li>
@@ -6,20 +6,21 @@
   <li><a href="#usage">Usage</a></li>
   <li><a href="#dataset">Dataset</a></li>
   <li><a href="#model-architecture">Model Architecture</a></li>
-  <li><a href="#training">Training</a></li>
-  <li><a href="#evaluation">Evaluation</a></li>
-  <li><a href="#results">Results</a></li>
-  <li><a href="#contributing">Contributing</a></li>
-  <li><a href="#license">License</a></li>
-  <li><a href="#contact">Contact</a></li>
+  <li><a href="#pipeline">Training and Testing Pipeline</a></li>
+  <li><a href="#eng_evaluation_results">English Model Evaluation</a></li>
+  <li><a href="#eng_test_results">English Model Test</a></li>
+  <li><a href="#vi_evaluation_results">Vietnamese Model Evaluation</a></li>
+  <li><a href="#vi_test_results">Vietnamese Model Test</a></li>
 </ul>
+
 <h2 id="introduction">Introduction</h2>
 <p>This project involves a Voice Emotion Recognition model that detects human emotions from speech signals. The model can identify various emotions such as happiness, sadness, anger, surprised, disgusted, fearful, and neutrality, helping in applications such as customer service, mental health monitoring, and human-computer interaction.</p>
+
 <h2 id="installation">Installation</h2>
 <ol>
   <li>Clone the repository:
-    <pre><code>git clone https://github.com/yourusername/voice-emotion-recognition.git
-cd voice-emotion-recognition</code></pre>
+    <pre><code>git clone https://github.com/trucni2005/Speech-Emotion-Recognition.git
+cd Speech-Emotion-Recognition</code></pre>
   </li>
   <li>Create and activate a virtual environment:
     <pre><code>python -m venv venv
@@ -29,3 +30,180 @@ source venv/bin/activate  # On Windows use `venv\Scripts\activate`</code></pre>
     <pre><code>pip install -r requirements.txt</code></pre>
   </li>
 </ol>
+
+<h2 id="usage">Usage</h2>
+<ol>
+  <li>Prepare data - Preprocessing data - Extract feature statistics and mel spectrogram images:
+    <pre><code>jupyter notebook audio_feature_pipeline.ipynb</code></pre>
+  </li>
+  <li>Train CNN model Conv1D using feature statistics:
+    <pre><code>jupyter notebook train_cnn_model_using_feature_statistics.ipynb</code></pre>
+  </li>
+  <li>Train CNN model Conv2D using mel spectrogram images:
+    <pre><code>jupyter notebook train_cnn_model_using_mel_spectrogram.ipynb</code></pre>
+  </li>
+  <li>Fine-tune CNN model using feature statistics:
+    <pre><code>jupyter notebook fine_tuning_cnn_model_using_feature_statistics.ipynb</code></pre>
+  </li>
+</ol>
+
+<h2 id="dataset">Dataset</h2>
+<p>The dataset used for this project can be downloaded from the following link:</p>
+<p><a href="https://drive.google.com/file/d/1XNB2J57Sygo0piOawSaOvXLtAbhVLk0z/view?usp=sharing" target="_blank">Download Dataset</a></p>
+
+<h2 id="model-architecture">Model Architecture</h2>
+<img src="/images/model_architecture.png" alt="Model Architecture" width="600">
+
+<h2 id="pipeline">Training and Testing Pipeline</h2>
+<img src="/images/pineline.png" alt="Training and Testing Pipeline" width="600">
+
+<h2 id="eng_evaluation_results">English Model Evaluation</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Feature</th>
+      <th>Angry</th>
+      <th>Disgusted</th>
+      <th>Fearful</th>
+      <th>Happy</th>
+      <th>Neutral</th>
+      <th>Sad</th>
+      <th>Surprised</th>
+      <th>Average</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>MFCC 13</td>
+      <td>84.3</td>
+      <td>54.1</td>
+      <td>47.3</td>
+      <td>62.2</td>
+      <td>70.1</td>
+      <td>70.9</td>
+      <td>81.7</td>
+      <td>65.6</td>
+    </tr>
+    <tr>
+      <td>MFCC 20</td>
+      <td>82.7</td>
+      <td>57.0</td>
+      <td>52.2</td>
+      <td>60.0</td>
+      <td>72.6</td>
+      <td>72.1</td>
+      <td>90.0</td>
+      <td>67.3</td>
+    </tr>
+    <tr>
+      <td>MFCC 26</td>
+      <td>83.8</td>
+      <td>63.4</td>
+      <td>44.6</td>
+      <td>60.6</td>
+      <td>73.9</td>
+      <td>74.4</td>
+      <td>88.3</td>
+      <td>67.7</td>
+    </tr>
+    <tr>
+      <td>MFCC 40</td>
+      <td>84.9</td>
+      <td>62.2</td>
+      <td>51.6</td>
+      <td>58.9</td>
+      <td>69.4</td>
+      <td>68.0</td>
+      <td>88.3</td>
+      <td>67.0</td>
+    </tr>
+    <tr>
+      <td>ZCR</td>
+      <td>74.6</td>
+      <td>20.4</td>
+      <td>2.7</td>
+      <td>18.9</td>
+      <td>34.4</td>
+      <td>62.8</td>
+      <td>3.33</td>
+      <td>33.8</td>
+    </tr>
+    <tr>
+      <td>RMS</td>
+      <td>71.4</td>
+      <td>32.6</td>
+      <td>4.0</td>
+      <td>26.7</td>
+      <td>67.5</td>
+      <td>58.1</td>
+      <td>55.0</td>
+      <td>43.5</td>
+    </tr>
+    <tr>
+      <td>Pitch</td>
+      <td>40.5</td>
+      <td>39.5</td>
+      <td>41.9</td>
+      <td>32.8</td>
+      <td>41.4</td>
+      <td>55.2</td>
+      <td>45.0</td>
+      <td>41.9</td>
+    </tr>
+    <tr>
+      <td>MFCC 13 + ZCR + RMS + Pitch</td>
+      <td>84.3</td>
+      <td>58.7</td>
+      <td>51.6</td>
+      <td>65.0</td>
+      <td>75.2</td>
+      <td>71.5</td>
+      <td>85.0</td>
+      <td>68.5</td>
+    </tr>
+    <tr>
+      <td>MFCC 20 + ZCR + RMS + Pitch</td>
+      <td>81.6</td>
+      <td>59.3</td>
+      <td>51.1</td>
+      <td>63.3</td>
+      <td>74.5</td>
+      <td>71.5</td>
+      <td>90.0</td>
+      <td>68.0</td>
+    </tr>
+    <tr>
+      <td>MFCC 26 + ZCR + RMS + Pitch</td>
+      <td>82.2</td>
+      <td>59.3</td>
+      <td>53.3</td>
+      <td>65.0</td>
+      <td>75.8</td>
+      <td>74.0</td>
+      <td>86.7</td>
+      <td>69.1</td>
+    </tr>
+    <tr>
+      <td>MFCC 40 + ZCR + RMS + Pitch</td>
+      <td>82.2</td>
+      <td>58.1</td>
+      <td>53.8</td>
+      <td>65.6</td>
+      <td>72.6</td>
+      <td>70.4</td>
+      <td>90.0</td>
+      <td>68.3</td>
+    </tr>
+    <tr>
+      <td>MSPECT</td>
+      <td>77.7</td>
+      <td>53.3</td>
+      <td>39.6</td>
+      <td>49.4</td>
+      <td>65.4</td>
+      <td>66.5</td>
+      <td>76.1</td>
+      <td>59.4</td>
+    </tr>
+  </tbody>
+</table>
