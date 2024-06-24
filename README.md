@@ -219,10 +219,10 @@ source venv/bin/activate  # On Windows use `venv\Scripts\activate`</code></pre>
 
 <h2 id="eng_test_results">English Model Test</h2>
 <img src="/images/eng_test_confusion_matrix.png" alt="Confusion Matrix" width="800">
-<p><b>Figure 3:</b> Raw Confusion Matrix of the English Model Evaluation. This matrix shows the number of true positives, false positives, true negatives, and false negatives for each class.</p>
+<p><b>Figure 1:</b> Raw Confusion Matrix of the English Model Evaluation. This matrix shows the number of true positives, false positives, true negatives, and false negatives for each class.</p>
 
 <img src="images/eng_test_cf_matrix_normalized.png" alt="Normalized Confusion Matrix" width="800">
-<p><b>Figure 4:</b> Normalized Confusion Matrix of the English Model Evaluation. This matrix shows the proportion of true positives, false positives, true negatives, and false negatives for each class.</p>
+<p><b>Figure 2:</b> Normalized Confusion Matrix of the English Model Evaluation. This matrix shows the proportion of true positives, false positives, true negatives, and false negatives for each class.</p>
 
 <p>Overall, the English model achieved the following metric on the test set:</p>
 <ul>
@@ -244,10 +244,10 @@ source venv/bin/activate  # On Windows use `venv\Scripts\activate`</code></pre>
 
 <h2 id="vi_test_results">Vietnamese Model Test</h2>
 <img src="/images/vi_test_confusion_matrix.png" alt="Confusion Matrix" width="800">
-<p><b>Figure 3:</b> Raw Confusion Matrix of the Vietnamese Model Test. This matrix shows the number of true positives, false positives, true negatives, and false negatives for each class.</p>
+<p><b>Figure 5:</b> Raw Confusion Matrix of the Vietnamese Model Test. This matrix shows the number of true positives, false positives, true negatives, and false negatives for each class.</p>
 
 <img src="/images/vi_test_cf_normalized.png" alt="Normalized Confusion Matrix" width="800">
-<p><b>Figure 4:</b> Normalized Confusion Matrix of the Vietnamese Model Test. This matrix shows the proportion of true positives, false positives, true negatives, and false negatives for each class.</p>
+<p><b>Figure 6:</b> Normalized Confusion Matrix of the Vietnamese Model Test. This matrix shows the proportion of true positives, false positives, true negatives, and false negatives for each class.</p>
 
 <p>Overall, the Vietnamese model achieved the following metric on the test set:</p>
 <ul>
