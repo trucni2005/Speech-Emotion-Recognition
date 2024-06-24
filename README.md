@@ -33,7 +33,18 @@ source venv/bin/activate  # On Windows use `venv\Scripts\activate`</code></pre>
 
 <h2 id="usage">Usage</h2>
 <ol>
-  <li>Prepare data - Preprocessing data - Extract feature statistics and mel spectrogram images:
+  <li>Download and extract the dataset and models:
+    <ol>
+      <li>Download the dataset from the following link:
+        <p><a href="https://drive.google.com/file/d/1mIqS7K965akbdOnvw5rLtHFZPIeRW3-u/view?usp=drive_link" target="_blank">Download Dataset</a></p>
+      </li>
+      <li>Download the models from the following link:
+        <p><a href="https://drive.google.com/file/d/17-ovCphgXd7xsACBjYe-4-LVeRtsKc9b/view?usp=drive_link" target="_blank">Download Models</a></p>
+      </li>
+      <li>Extract the dataset and models, and place the files in the root directory of the project (the main folder where your project files are located).</li>
+    </ol>
+  </li>
+  <li>Prepare data - Preprocess data - Extract feature statistics and mel spectrogram images:
     <pre><code>jupyter notebook audio_feature_pipeline.ipynb</code></pre>
   </li>
   <li>Train CNN model Conv1D using feature statistics:
@@ -46,10 +57,6 @@ source venv/bin/activate  # On Windows use `venv\Scripts\activate`</code></pre>
     <pre><code>jupyter notebook fine_tuning_cnn_model_using_feature_statistics.ipynb</code></pre>
   </li>
 </ol>
-
-<h2 id="dataset">Dataset</h2>
-<p>The dataset used for this project can be downloaded from the following link:</p>
-<p><a href="https://drive.google.com/file/d/1XNB2J57Sygo0piOawSaOvXLtAbhVLk0z/view?usp=sharing" target="_blank">Download Dataset</a></p>
 
 <h2 id="model-architecture">Model Architecture</h2>
 <img src="/images/model_architecture.png" alt="Model Architecture" width="600">
@@ -207,3 +214,50 @@ source venv/bin/activate  # On Windows use `venv\Scripts\activate`</code></pre>
     </tr>
   </tbody>
 </table>
+
+<h2 id="eng_test_results">English Model Test</h2>
+<img src="/images/pineline.png" alt="Training and Testing Pipeline" width="600">
+
+<h2 id="vi_validation_results">Vietnamese Model Evaluation</h2>
+<p>The following images show the evaluation results of the Vietnamese model using confusion matrices. The first image shows the raw confusion matrix, and the second image shows the normalized confusion matrix.</p>
+
+<img src="/images/vi_evaluation_confusion_matrix.png" alt="Confusion Matrix" width="600">
+<p><b>Figure 1:</b> Raw Confusion Matrix of the Vietnamese Model Evaluation. This matrix shows the number of true positives, false positives, true negatives, and false negatives for each class.</p>
+
+<img src="/images/vi_evaluation_cf_normalized.png" alt="Normalized Confusion Matrix" width="600">
+<p><b>Figure 2:</b> Normalized Confusion Matrix of the Vietnamese Model Evaluation. This matrix shows the proportion of true positives, false positives, true negatives, and false negatives for each class.</p>
+
+<p>Overall, the Vietnamese model achieved the following metric:</p>
+<ul>
+  <li><b>Accuracy:</b> 81.12%</li>
+</ul>
+
+<h2 id="vi_validation_results">Vietnamese Model Evaluation</h2>
+<p>The following images show the evaluation results of the Vietnamese model using confusion matrices. The first image shows the raw confusion matrix, and the second image shows the normalized confusion matrix.</p>
+
+<img src="/images/vi_evaluation_confusion_matrix.png" alt="Confusion Matrix" width="600">
+<p><b>Figure 1:</b> Raw Confusion Matrix of the Vietnamese Model Evaluation. This matrix shows the number of true positives, false positives, true negatives, and false negatives for each class.</p>
+
+<img src="/images/vi_evaluation_cf_normalized.png" alt="Normalized Confusion Matrix" width="600">
+<p><b>Figure 2:</b> Normalized Confusion Matrix of the Vietnamese Model Evaluation. This matrix shows the proportion of true positives, false positives, true negatives, and false negatives for each class.</p>
+
+<p>Overall, the Vietnamese model achieved the following metric on the validation set:</p>
+<ul>
+  <li><b>Accuracy:</b> 81.12%</li>
+</ul>
+
+<p>These results indicate that the model performs well in identifying emotions from Vietnamese speech data, with the normalized confusion matrix highlighting the distribution of correctly and incorrectly classified instances for each class.</p>
+
+<h2 id="vi_test_results">Vietnamese Model Test</h2>
+<p>The following images show the evaluation results of the Vietnamese model on the test set using confusion matrices. The first image shows the raw confusion matrix, and the second image shows the normalized confusion matrix.</p>
+
+<img src="/images/test_evaluation_confusion_matrix.png" alt="Confusion Matrix" width="600">
+<p><b>Figure 3:</b> Raw Confusion Matrix of the Vietnamese Model Test Evaluation. This matrix shows the number of true positives, false positives, true negatives, and false negatives for each class.</p>
+
+<img src="/images/test_evaluation_cf_normalized.png" alt="Normalized Confusion Matrix" width="600">
+<p><b>Figure 4:</b> Normalized Confusion Matrix of the Vietnamese Model Test Evaluation. This matrix shows the proportion of true positives, false positives, true negatives, and false negatives for each class.</p>
+
+<p>Overall, the Vietnamese model achieved the following metric on the test set:</p>
+<ul>
+  <li><b>Accuracy:</b> 86.12%</li>
+</ul>
