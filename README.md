@@ -56,6 +56,9 @@ source venv/bin/activate  # On Windows use `venv\Scripts\activate`</code></pre>
   <li>Fine-tune CNN model using feature statistics:
     <pre><code>jupyter notebook fine_tuning_cnn_model_using_feature_statistics.ipynb</code></pre>
   </li>
+  <li>Test the fine-tuned CNN model using feature statistics:
+    <pre><code>jupyter notebook test.ipynb</code></pre>
+  </li>
 </ol>
 
 <h2 id="model-architecture">Model Architecture</h2>
