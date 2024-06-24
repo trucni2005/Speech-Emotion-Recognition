@@ -4,7 +4,6 @@
   <li><a href="#introduction">Introduction</a></li>
   <li><a href="#installation">Installation</a></li>
   <li><a href="#usage">Usage</a></li>
-  <li><a href="#dataset">Dataset</a></li>
   <li><a href="#model-architecture">Model Architecture</a></li>
   <li><a href="#pipeline">Training and Testing Pipeline</a></li>
   <li><a href="#eng_evaluation_results">English Model Evaluation</a></li>
@@ -45,19 +44,19 @@ source venv/bin/activate  # On Windows use `venv\Scripts\activate`</code></pre>
     </ol>
   </li>
   <li>Prepare data - Preprocess data - Extract feature statistics and mel spectrogram images:
-    <pre><code>jupyter notebook audio_feature_pipeline.ipynb</code></pre>
+    <pre><code>jupyter-notebook audio_feature_pipeline.ipynb</code></pre>
   </li>
   <li>Train CNN model Conv1D using feature statistics:
-    <pre><code>jupyter notebook train_cnn_model_using_feature_statistics.ipynb</code></pre>
+    <pre><code>jupyter-notebook train_cnn_model_using_feature_statistics.ipynb</code></pre>
   </li>
   <li>Train CNN model Conv2D using mel spectrogram images:
-    <pre><code>jupyter notebook train_cnn_model_using_mel_spectrogram.ipynb</code></pre>
+    <pre><code>jupyter-notebook train_cnn_model_using_mel_spectrogram.ipynb</code></pre>
   </li>
   <li>Fine-tune CNN model using feature statistics:
-    <pre><code>jupyter notebook fine_tuning_cnn_model_using_feature_statistics.ipynb</code></pre>
+    <pre><code>jupyter-notebook fine_tuning_cnn_model_using_feature_statistics.ipynb</code></pre>
   </li>
   <li>Test the fine-tuned CNN model using feature statistics:
-    <pre><code>jupyter notebook test.ipynb</code></pre>
+    <pre><code>jupyter-notebook test.ipynb</code></pre>
   </li>
 </ol>
 
@@ -222,14 +221,25 @@ source venv/bin/activate  # On Windows use `venv\Scripts\activate`</code></pre>
 
 <p>These results indicate that the model performs well in identifying emotions from Vietnamese speech data, with the normalized confusion matrix highlighting the distribution of correctly and incorrectly classified instances for each class.</p>
 
-<h2 id="vi_test_results">Vietnamese Model Test</h2>
-<p>The following images show the evaluation results of the Vietnamese model on the test set using confusion matrices. The first image shows the raw confusion matrix, and the second image shows the normalized confusion matrix.</p>
+<h2 id="vi_evaluation_results">Vietnamese Model Evaluation</h2>
 
+<img src="/images/vi_evaluation_confusion_matrix.png" alt="Confusion Matrix" width="600">
+<p><b>Figure 3:</b> Raw Confusion Matrix of the Vietnamese Model Evaluation. This matrix shows the number of true positives, false positives, true negatives, and false negatives for each class.</p>
+
+<img src="/images/vi_evaluation_cf_normalized.png" alt="Normalized Confusion Matrix" width="600">
+<p><b>Figure 4:</b> Normalized Confusion Matrix of the Vietnamese Model Evaluation. This matrix shows the proportion of true positives, false positives, true negatives, and false negatives for each class.</p>
+
+<p>Overall, the Vietnamese model achieved the following metric on the test set:</p>
+<ul>
+  <li><b>Accuracy:</b> 81.12%</li>
+</ul>
+
+<h2 id="vi_test_results">Vietnamese Model Test</h2>
 <img src="/images/vi_test_confusion_matrix.png" alt="Confusion Matrix" width="600">
-<p><b>Figure 3:</b> Raw Confusion Matrix of the Vietnamese Model Test Evaluation. This matrix shows the number of true positives, false positives, true negatives, and false negatives for each class.</p>
+<p><b>Figure 3:</b> Raw Confusion Matrix of the Vietnamese Model Test. This matrix shows the number of true positives, false positives, true negatives, and false negatives for each class.</p>
 
 <img src="/images/vi_test_cf_normalized.png" alt="Normalized Confusion Matrix" width="600">
-<p><b>Figure 4:</b> Normalized Confusion Matrix of the Vietnamese Model Test Evaluation. This matrix shows the proportion of true positives, false positives, true negatives, and false negatives for each class.</p>
+<p><b>Figure 4:</b> Normalized Confusion Matrix of the Vietnamese Model Test. This matrix shows the proportion of true positives, false positives, true negatives, and false negatives for each class.</p>
 
 <p>Overall, the Vietnamese model achieved the following metric on the test set:</p>
 <ul>
