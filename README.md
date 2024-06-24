@@ -180,15 +180,15 @@ source venv/bin/activate  # On Windows use `venv\Scripts\activate`</code></pre>
       <td>68.0</td>
     </tr>
     <tr>
-      <td>MFCC 26 + ZCR + RMS + Pitch</td>
-      <td>82.2</td>
-      <td>59.3</td>
-      <td>53.3</td>
-      <td>65.0</td>
-      <td>75.8</td>
-      <td>74.0</td>
-      <td>86.7</td>
-      <td>69.1</td>
+      <td><strong>MFCC 26 + ZCR + RMS + Pitch</strong></td>
+      <td><strong>82.2</strong></td>
+      <td><strong>59.3</strong></td>
+      <td><strong>53.3</strong></td>
+      <td><strong>65.0</strong></td>
+      <td><strong>75.8</strong></td>
+      <td><strong>74.0</strong></td>
+      <td><strong>86.7</strong></td>
+      <td><strong>69.1</strong></td>
     </tr>
     <tr>
       <td>MFCC 40 + ZCR + RMS + Pitch</td>
