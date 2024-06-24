@@ -4,7 +4,6 @@
   <li><a href="#introduction">Introduction</a></li>
   <li><a href="#installation">Installation</a></li>
   <li><a href="#usage">Usage</a></li>
-  <li><a href="#dataset">Dataset</a></li>
   <li><a href="#model-architecture">Model Architecture</a></li>
   <li><a href="#pipeline">Training and Testing Pipeline</a></li>
   <li><a href="#eng_evaluation_results">English Model Evaluation</a></li>
@@ -219,12 +218,10 @@ source venv/bin/activate  # On Windows use `venv\Scripts\activate`</code></pre>
 </table>
 
 <h2 id="eng_test_results">English Model Test</h2>
-
-<p>These results indicate that the model performs well in identifying emotions from Vietnamese speech data, with the normalized confusion matrix highlighting the distribution of correctly and incorrectly classified instances for each class.</p>
-<img src="/images/eng_evaluation_confusion_matrix.png" alt="Confusion Matrix" width="600">
+<img src="/images/eng_test_confusion_matrix.png" alt="Confusion Matrix" width="600">
 <p><b>Figure 3:</b> Raw Confusion Matrix of the English Model Evaluation. This matrix shows the number of true positives, false positives, true negatives, and false negatives for each class.</p>
 
-<img src="/images/eng_evaluation_cf_normalized.png" alt="Normalized Confusion Matrix" width="600">
+<img src="/images/eng_test_cf_normalized.png" alt="Normalized Confusion Matrix" width="600">
 <p><b>Figure 4:</b> Normalized Confusion Matrix of the English Model Evaluation. This matrix shows the proportion of true positives, false positives, true negatives, and false negatives for each class.</p>
 
 <p>Overall, the English model achieved the following metric on the test set:</p>
