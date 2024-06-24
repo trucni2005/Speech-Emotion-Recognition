@@ -222,10 +222,10 @@ source venv/bin/activate  # On Windows use `venv\Scripts\activate`</code></pre>
 <h2 id="vi_test_results">Vietnamese Model Test</h2>
 <p>The following images show the evaluation results of the Vietnamese model on the test set using confusion matrices. The first image shows the raw confusion matrix, and the second image shows the normalized confusion matrix.</p>
 
-<img src="/images/vi_test_evaluation_confusion_matrix.png" alt="Confusion Matrix" width="600">
+<img src="/images/vi_test_confusion_matrix.png" alt="Confusion Matrix" width="600">
 <p><b>Figure 3:</b> Raw Confusion Matrix of the Vietnamese Model Test Evaluation. This matrix shows the number of true positives, false positives, true negatives, and false negatives for each class.</p>
 
-<img src="/images/vi_test_evaluation_cf_normalized.png" alt="Normalized Confusion Matrix" width="600">
+<img src="/images/vi_test_cf_normalized.png" alt="Normalized Confusion Matrix" width="600">
 <p><b>Figure 4:</b> Normalized Confusion Matrix of the Vietnamese Model Test Evaluation. This matrix shows the proportion of true positives, false positives, true negatives, and false negatives for each class.</p>
 
 <p>Overall, the Vietnamese model achieved the following metric on the test set:</p>
