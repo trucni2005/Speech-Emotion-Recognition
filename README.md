@@ -251,6 +251,5 @@ source venv/bin/activate  # On Windows use `venv\Scripts\activate`</code></pre>
 
 <p>Overall, the Vietnamese model achieved the following metric on the test set:</p>
 <ul>
-<<<<<<< HEAD
   <li><b>Accuracy:</b> 75.33%</li>
-=======
+</ul>
