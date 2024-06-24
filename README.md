@@ -4,7 +4,6 @@
   <li><a href="#introduction">Introduction</a></li>
   <li><a href="#installation">Installation</a></li>
   <li><a href="#usage">Usage</a></li>
-  <li><a href="#dataset">Dataset</a></li>
   <li><a href="#model-architecture">Model Architecture</a></li>
   <li><a href="#pipeline">Training and Testing Pipeline</a></li>
   <li><a href="#eng_evaluation_results">English Model Evaluation</a></li>
@@ -242,7 +241,7 @@ source venv/bin/activate  # On Windows use `venv\Scripts\activate`</code></pre>
 
 <p>Overall, the Vietnamese model achieved the following metric on the test set:</p>
 <ul>
-  <li><b>Accuracy:</b> 81.12%</li>
+  <li><b>Accuracy:</b> 77.49%</li>
 </ul>
 
 <h2 id="vi_test_results">Vietnamese Model Test</h2>
@@ -254,5 +253,5 @@ source venv/bin/activate  # On Windows use `venv\Scripts\activate`</code></pre>
 
 <p>Overall, the Vietnamese model achieved the following metric on the test set:</p>
 <ul>
-  <li><b>Accuracy:</b> 86.12%</li>
+  <li><b>Accuracy:</b> 75.33%</li>
 </ul>
