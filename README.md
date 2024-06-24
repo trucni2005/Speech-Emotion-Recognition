@@ -216,45 +216,16 @@ source venv/bin/activate  # On Windows use `venv\Scripts\activate`</code></pre>
 </table>
 
 <h2 id="eng_test_results">English Model Test</h2>
-<img src="/images/pineline.png" alt="Training and Testing Pipeline" width="600">
-
-<h2 id="vi_validation_results">Vietnamese Model Evaluation</h2>
-<p>The following images show the evaluation results of the Vietnamese model using confusion matrices. The first image shows the raw confusion matrix, and the second image shows the normalized confusion matrix.</p>
-
-<img src="/images/vi_evaluation_confusion_matrix.png" alt="Confusion Matrix" width="600">
-<p><b>Figure 1:</b> Raw Confusion Matrix of the Vietnamese Model Evaluation. This matrix shows the number of true positives, false positives, true negatives, and false negatives for each class.</p>
-
-<img src="/images/vi_evaluation_cf_normalized.png" alt="Normalized Confusion Matrix" width="600">
-<p><b>Figure 2:</b> Normalized Confusion Matrix of the Vietnamese Model Evaluation. This matrix shows the proportion of true positives, false positives, true negatives, and false negatives for each class.</p>
-
-<p>Overall, the Vietnamese model achieved the following metric:</p>
-<ul>
-  <li><b>Accuracy:</b> 81.12%</li>
-</ul>
-
-<h2 id="vi_validation_results">Vietnamese Model Evaluation</h2>
-<p>The following images show the evaluation results of the Vietnamese model using confusion matrices. The first image shows the raw confusion matrix, and the second image shows the normalized confusion matrix.</p>
-
-<img src="/images/vi_evaluation_confusion_matrix.png" alt="Confusion Matrix" width="600">
-<p><b>Figure 1:</b> Raw Confusion Matrix of the Vietnamese Model Evaluation. This matrix shows the number of true positives, false positives, true negatives, and false negatives for each class.</p>
-
-<img src="/images/vi_evaluation_cf_normalized.png" alt="Normalized Confusion Matrix" width="600">
-<p><b>Figure 2:</b> Normalized Confusion Matrix of the Vietnamese Model Evaluation. This matrix shows the proportion of true positives, false positives, true negatives, and false negatives for each class.</p>
-
-<p>Overall, the Vietnamese model achieved the following metric on the validation set:</p>
-<ul>
-  <li><b>Accuracy:</b> 81.12%</li>
-</ul>
 
 <p>These results indicate that the model performs well in identifying emotions from Vietnamese speech data, with the normalized confusion matrix highlighting the distribution of correctly and incorrectly classified instances for each class.</p>
 
 <h2 id="vi_test_results">Vietnamese Model Test</h2>
 <p>The following images show the evaluation results of the Vietnamese model on the test set using confusion matrices. The first image shows the raw confusion matrix, and the second image shows the normalized confusion matrix.</p>
 
-<img src="/images/test_evaluation_confusion_matrix.png" alt="Confusion Matrix" width="600">
+<img src="/images/vi_test_evaluation_confusion_matrix.png" alt="Confusion Matrix" width="600">
 <p><b>Figure 3:</b> Raw Confusion Matrix of the Vietnamese Model Test Evaluation. This matrix shows the number of true positives, false positives, true negatives, and false negatives for each class.</p>
 
-<img src="/images/test_evaluation_cf_normalized.png" alt="Normalized Confusion Matrix" width="600">
+<img src="/images/vi_test_evaluation_cf_normalized.png" alt="Normalized Confusion Matrix" width="600">
 <p><b>Figure 4:</b> Normalized Confusion Matrix of the Vietnamese Model Test Evaluation. This matrix shows the proportion of true positives, false positives, true negatives, and false negatives for each class.</p>
 
 <p>Overall, the Vietnamese model achieved the following metric on the test set:</p>
